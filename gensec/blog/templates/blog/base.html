@@ -24,6 +24,7 @@
   </head>
   <body>
 
+    <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
           <a href="{% url 'blog:home' %}" class="brand-logo">GenSec</a>
@@ -39,6 +40,7 @@
         <li><a href="{% url 'blog:event_list' %}">Ongoing Work</a></li>
         <li><a href="{% url 'blog:post_list' %}">Suggestions/Complaints</a></li>
       </ul>
+    </div>
 
     {% block content %}
 

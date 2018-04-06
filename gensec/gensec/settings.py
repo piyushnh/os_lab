@@ -27,7 +27,7 @@ SECRET_KEY = '16lvj6+uy4(5)(s)d0!lntsa0bh^%9kkn9y^gz(t87$f(ouxa('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shettyforgensec.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
