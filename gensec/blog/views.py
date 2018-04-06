@@ -39,12 +39,13 @@ def ReplyComment(request, pk):
             comment = form.save(commit=False)
             comment.author = request.user
             comment.post = post
-            comment.parent = parent
+            comment.parent_comment = parent
             comment.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('blog:post_list')
     else:
         form = CommentReplyForm()
     return render(request, 'blog/comment_reply_form.html', {'form': form})
+
 
 
 

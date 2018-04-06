@@ -2,23 +2,28 @@
 <div class="card post-detail">
 
 
+
   <div class="card-content post-detail-content">
     <div>
       <span class="card-title">{{post.title}}</span>
-      <p class="float right"> Implemented</p>
-      {% if post.implemented %}
-      <i class="material-icons right" style="font-size:20px;">check</i>
-      {% else %}
-      <i class="material-icons right" style="font-size:20px;">clear</i>
-      {% endif %}
+      <div class="chip float right">
+        Implemented
+        {% if post.implemented %}
+        <i class="material-icons right" style="font-size:20px; margin-top:5%;">check</i>
+        {% else %}
+        <i class="material-icons right" style="font-size:20px; margin-top:5%;">clear</i>
+        {% endif %}
+      </div>
 
     </div>
     <br>
     <p>{{post.text}}</p>
   </div>
 
+
+
   <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-darken-4" >Comments<i class="material-icons right" >close</i></span>
     <div class="reveal-html">
         {% include "blog/comments.html" with comments=post.comments %}
     </div>
@@ -36,10 +41,10 @@
   <div id="modal1" class="modal">
   <div class="modal-content">
     <h4>Secretary Says</h4>
-    <p>A bunch of text </p>
+    {% include "blog/secretary/secretary.html" with comments=post.comments %}
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay!</a>
   </div>
 </div>
 

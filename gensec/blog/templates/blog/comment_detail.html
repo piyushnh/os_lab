@@ -1,7 +1,8 @@
-<blockquote class="blockquote mb-0">
+<blockquote class="blockquote mb-0" style="margin-bottom:0px; margin-top:0px;">
   {% if request.user.is_superuser %}
-<a href="">{{comment.text}}</a>
-  {% endif %}
+  <a href="{% url 'blog:reply_secretary' pk=comment.pk %}">{{comment.text}}</a>
+  {% else %}
   <p>{{comment.text}}</p>
-  <footer class="blockquote-footer"> <cite title="Source Title">{{comment.author.first_name}} {{comment.author.last_name}}</cite></footer>
+  {% endif %}
+  <footer class="blockquote-footer"> <cite title="Source Title">- {{comment.author.first_name}} {{comment.author.last_name}}</cite></footer>
 </blockquote>

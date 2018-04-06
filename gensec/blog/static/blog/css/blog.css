@@ -7,6 +7,9 @@
 padding-left:10px;
 }
 
+.sec-card{
+  padding:0px;
+}
 .com{
   cursor: pointer;
 }
@@ -21,8 +24,11 @@ padding-left:10px;
   margin:0 5% 0 5%;
 }
 
+.sec-card{
+  padding:0px;
+}
+
 .suggestions-text{
-  height: 200px;
   width:100%;
   border:5px solid rgb(244, 66, 92);
   border-radius:10px;

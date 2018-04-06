@@ -26,7 +26,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete = models.CASCADE)
-    parent = models.ForeignKey("self", related_name='parent', on_delete = models.CASCADE, null=True, blank =True)
+    parent_comment = models.ForeignKey("self", related_name='parent', on_delete = models.CASCADE, null=True, blank =True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
@@ -58,5 +58,5 @@ class TimePoint(models.Model):
     def __str__(self):
         return self.event.title
 
-class Secretary(models.Model):
-    status = models.ForeignKey(Comment, on_delete=models.CASCADE)
+# class Secretary(models.Model):
+#     status = models.ForeignKey(Comment, on_delete=models.CASCADE)
