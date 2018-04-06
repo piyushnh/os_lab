@@ -34,14 +34,14 @@
     <ul class="tabs tabs-fixed-width">
       <li class="tab"><a class="upvote com">Upvote ({{post.upvote}})</a></li>
       <li class="tab"><a  class="comments activator com">Comments</a></li>
-      <li class="tab"><a class="secretary modal-trigger com" href="#modal1">Secretary says</a></li>
+      <li class="tab"><a class="secretary modal-trigger com" href="#{{post.pk}}">Redressal</a></li>
     </ul>
   </div>
 
-  <div id="modal1" class="modal">
+  <div id="{{post.pk}}" class="modal">
   <div class="modal-content">
     <h4>Secretary Says</h4>
-    {% include "blog/secretary/secretary.html" with comments=post.comments %}
+    {% include "blog/secretary/secretary.html" with comments=post.comments post=post %}
   </div>
   <div class="modal-footer">
     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Okay!</a>
