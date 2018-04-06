@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+
+
+
+<div class="container">
+  <h2>Suggestions</h2>
+
+  <div class="container suggestions-text">
+  <h3 style="margin:2% 0 1% 5%;">What's this?</h3>
+  <div >
+    <p class="text-usage">Students can drop their suggestions/complaints here, which shall regularly be addressed by the candidate.</p>
+    <p class="text-usage">If a student happens to have a suggestion that's already posted, she may upvote it in order to increase its priority of redressal.</p>
+    <p class="text-usage">The candidates opinion on a suggestion/ status of the work being done on it can be seen using 'secretary says'.</p>
+  </div>
+
+
+
+  </div>
+
+   {% for post in posts %}
+       {% include "blog/post_detail.html" with post=post %}
+   {% endfor %}
+</div>
+
+{% endblock %}

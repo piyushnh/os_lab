@@ -1,0 +1,55 @@
+
+<div class="card post-detail">
+
+
+  <div class="card-content post-detail-content">
+    <div>
+      <span class="card-title">{{post.title}}</span>
+      <p class="float right"> Implemented</p>
+      {% if post.implemented %}
+      <i class="material-icons right" style="font-size:20px;">check</i>
+      {% else %}
+      <i class="material-icons right" style="font-size:20px;">clear</i>
+      {% endif %}
+
+    </div>
+    <br>
+    <p>{{post.text}}</p>
+  </div>
+
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+    <div class="reveal-html">
+        {% include "blog/comments.html" with comments=post.comments %}
+    </div>
+  </div>
+
+
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a class="upvote com">Upvote ({{post.upvote}})</a></li>
+      <li class="tab"><a  class="comments activator com">Comments</a></li>
+      <li class="tab"><a class="secretary modal-trigger com" href="#modal1">Secretary says</a></li>
+    </ul>
+  </div>
+
+  <div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Secretary Says</h4>
+    <p>A bunch of text </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+  <script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+  </script>
+
+
+
+
+</div>

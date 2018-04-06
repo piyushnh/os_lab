@@ -1,0 +1,7 @@
+<blockquote class="blockquote mb-0">
+  {% if request.user.is_superuser %}
+<a href="">{{comment.text}}</a>
+  {% endif %}
+  <p>{{comment.text}}</p>
+  <footer class="blockquote-footer"> <cite title="Source Title">{{comment.author.first_name}} {{comment.author.last_name}}</cite></footer>
+</blockquote>

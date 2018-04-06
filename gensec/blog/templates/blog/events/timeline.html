@@ -1,0 +1,5 @@
+<ul class="collection with-header">
+  {% for timepoint in timepoints.all %}
+    <li class="collection-item">{% include "blog/events/timepoint.html" with timepoint=timepoint%}</li>
+  {% endfor %}
+</ul>

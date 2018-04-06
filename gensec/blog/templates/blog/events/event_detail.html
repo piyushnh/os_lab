@@ -1,0 +1,36 @@
+<div class="card post-detail">
+
+
+  <div class="card-content post-detail-content">
+    <div>
+      <span class="card-title">{{event.title}}</span>
+      <p class="float right"> Started on: {{event.created_date}}</p>
+      {% if event.finished_date %}
+      <p class="float right"> Completed on:{{event.finished_date}}</p>
+      {% else %}
+      {% endif %}
+    </div>
+    <br>
+    <p>{{event.text}}</p>
+  </div>
+
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Timeline<i class="material-icons right">close</i></span>
+    <div class="reveal-html">
+        {% include "blog/events/timeline.html" with timepoints=event.timepoints %}
+    </div>
+  </div>
+
+
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a class="timeline activator com">Timeline</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+
+</div>
